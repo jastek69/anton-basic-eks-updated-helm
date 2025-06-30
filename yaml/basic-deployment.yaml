@@ -1,0 +1,26 @@
+#>>>----------------------------DEPLOYMENT------------------------------------->
+apiVersion: apps/v1                  # >>> Specifying the API version for the resource you intend on creating
+kind: Deployment                     # >>> Resource type of deployment. A managed replicaset or group of pods that share the same labels and selectors
+metadata:
+  name: one-of-many                  # >>> The name of our deployment
+  namespace: my-first-ns             # >>> The namespace or sudo VPC location/logically seperated sandbox where the deployment lives on this cluster.
+# >>> POD LEVEL SPECIFICATION
+spec:                                       
+  replicas: 2                        # >>> The amount of cloned pods that will be created and managed by the deployment
+  selector:
+    matchLabels:                     # >>> Determines the labels that the deployment will use to identify it's managed pods 
+      app: type-a
+  template:
+    metadata:
+      labels:
+        app: type-a                  # >>> Pod label used by the Deployment and Service
+# >>> CONTAINER LEVEL SPECIFICATION
+    spec:  
+      serviceAccountName: my-app-id                              
+      containers:
+      - name: giftwrapped-container  # >>> Container name
+        image: europe-central2-docker.pkg.dev/pooper-scooper/run-gmp/red-head:v2  # >>> Application image for each pod replica
+        imagePullPolicy: Always      # >>> Always pulls the image when starting the container
+        ports:
+        - containerPort: 5000        # >>> The port that the container application will listen on
+---

@@ -1,0 +1,14 @@
+#>>>--------------------------SERVICE------------------------------------------>
+kind: Service                        # >>> Kubernetes Service to expose the application
+apiVersion: v1                       # >>> API version for core Service resources
+metadata:
+  name: type-a-service               # >>> Name of the Service
+  namespace: my-first-ns             # >>> Namespace of the Service
+spec: 
+  type: LoadBalancer                 # >>> Creates a cloud-managed LB using the cluster IP service created as a backend
+  ports:
+  - protocol: TCP                    # >>> Communication protocol used by the Service
+    port: 80                         # >>> The port that the Service will receive traffic on
+    targetPort: 5000                 # >>> The port the Service forwards traffic to on the container
+  selector:
+    app: type-a                      # >>> The labels the Service will use to direct traffic to matching pods in the namespace

@@ -1,0 +1,16 @@
+#>>>----------------------------POD-------------------------------------------->
+apiVersion: v1                  # >>> Specifying the API version for the resource you intend on creating
+kind: Pod                       # >>> Resource type of pod. A logical enviornment which hosts one or more containers               
+metadata:
+  labels:
+    app: type-a                 # >>> Pod label used to identify the pod across the cluster an within it's namespace       
+  name: only-one                # >>> Name of the pod
+  namespace: my-first-ns        # >>> The namespace or sudo VPC location/logically seperated sandbox where the deployment lives on this cluster.
+spec:
+  serviceAccountName: my-app-id # >>> Service account used by the pod for permissions and access control
+  containers:  
+  - image: europe-central2-docker.pkg.dev/pooper-scooper/run-gmp/milk:v2 # >>> Application image for each pod replica
+    name: only-pod-container    # >>> Container name
+    ports: 
+    - containerPort: 5000
+
