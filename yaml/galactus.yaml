@@ -1,0 +1,9 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongConsumer
+metadata:
+  name: galactus
+  annotations:
+    kubernetes.io/ingress.class: kong
+username: galactus
+credentials:
+- galactus-key-auth

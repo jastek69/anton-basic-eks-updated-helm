@@ -1,0 +1,227 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    22  100    22    0     0    166      0 --:--:-- --:--:-- --:--:--   170HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 22
+Connection: keep-alive
+RateLimit-Reset: 29
+X-RateLimit-Remaining-Minute: 4
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 4
+RateLimit-Limit: 5
+X-App-Name: http-echo
+X-App-Version: 1.0.0
+Date: Mon, 06 Jul 2026 08:25:31 GMT
+Server: kong/3.9.3
+X-Kong-Upstream-Latency: 1
+X-Kong-Proxy-Latency: 1
+Via: 1.1 kong/3.9.3
+X-Kong-Request-Id: a1fd5e4a78583c10496d331c3a604217
+
+Hello from Kong Lab 1
+
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    22  100    22    0     0    213      0 --:--:-- --:--:-- --:--:--   220HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 22
+Connection: keep-alive
+RateLimit-Reset: 29
+X-RateLimit-Remaining-Minute: 3
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 3
+RateLimit-Limit: 5
+X-App-Name: http-echo
+X-App-Version: 1.0.0
+Date: Mon, 06 Jul 2026 08:25:31 GMT
+Server: kong/3.9.3
+X-Kong-Upstream-Latency: 2
+X-Kong-Proxy-Latency: 0
+Via: 1.1 kong/3.9.3
+X-Kong-Request-Id: 91dc16513c39ef1b2d2a261d2e1ee47c
+
+Hello from Kong Lab 1
+
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    22  100    22    0     0    233      0 --:--:-- --:--:-- --:--:--   239HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 22
+Connection: keep-alive
+RateLimit-Reset: 29
+X-RateLimit-Remaining-Minute: 2
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 2
+RateLimit-Limit: 5
+X-App-Name: http-echo
+X-App-Version: 1.0.0
+Date: Mon, 06 Jul 2026 08:25:31 GMT
+Server: kong/3.9.3
+X-Kong-Upstream-Latency: 1
+X-Kong-Proxy-Latency: 0
+Via: 1.1 kong/3.9.3
+X-Kong-Request-Id: 4b43db76a8dea174b8a03b720ad64950
+
+Hello from Kong Lab 1
+
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    22  100    22    0     0    203      0 --:--:-- --:--:-- --:--:--   209HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 22
+Connection: keep-alive
+RateLimit-Reset: 29
+X-RateLimit-Remaining-Minute: 1
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 1
+RateLimit-Limit: 5
+X-App-Name: http-echo
+X-App-Version: 1.0.0
+Date: Mon, 06 Jul 2026 08:25:31 GMT
+Server: kong/3.9.3
+X-Kong-Upstream-Latency: 1
+X-Kong-Proxy-Latency: 1
+Via: 1.1 kong/3.9.3
+X-Kong-Request-Id: 13f50b48aa552c171a2f6f4a2b07de36
+
+Hello from Kong Lab 1
+
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    22  100    22    0     0    207      0 --:--:-- --:--:-- --:--:--   213HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Content-Length: 22
+Connection: keep-alive
+RateLimit-Reset: 29
+X-RateLimit-Remaining-Minute: 0
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 0
+RateLimit-Limit: 5
+X-App-Name: http-echo
+X-App-Version: 1.0.0
+Date: Mon, 06 Jul 2026 08:25:31 GMT
+Server: kong/3.9.3
+X-Kong-Upstream-Latency: 1
+X-Kong-Proxy-Latency: 1
+Via: 1.1 kong/3.9.3
+X-Kong-Request-Id: 767fea3c0900b206203fd63cc99d1907
+
+Hello from Kong Lab 1
+
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    92  100    92    0     0    903      0 --:--:-- --:--:-- --:--:--   938HTTP/1.1 429 Too Many Requests
+Date: Mon, 06 Jul 2026 08:25:31 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 29
+Retry-After: 29
+X-RateLimit-Remaining-Minute: 0
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 0
+RateLimit-Limit: 5
+Content-Length: 92
+X-Kong-Response-Latency: 1
+Server: kong/3.9.3
+X-Kong-Request-Id: c0cf7a573dfb5c7255493456b4f6df47
+
+{
+  "message":"API rate limit exceeded",
+  "request_id":"c0cf7a573dfb5c7255493456b4f6df47"
+}
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    92  100    92    0     0   1044      0 --:--:-- --:--:-- --:--:--  1082HTTP/1.1 429 Too Many Requests
+Date: Mon, 06 Jul 2026 08:25:32 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 28
+Retry-After: 28
+X-RateLimit-Remaining-Minute: 0
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 0
+RateLimit-Limit: 5
+Content-Length: 92
+X-Kong-Response-Latency: 0
+Server: kong/3.9.3
+X-Kong-Request-Id: 04496823d3d6f92da293cb5b308e1659
+
+{
+  "message":"API rate limit exceeded",
+  "request_id":"04496823d3d6f92da293cb5b308e1659"
+}
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    92  100    92    0     0    834      0 --:--:-- --:--:-- --:--:--   851100    92  100    92    0     0    834      0 --:--:-- --:--:-- --:--:--   851HTTP/1.1 429 Too Many Requests
+Date: Mon, 06 Jul 2026 08:25:32 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 28
+Retry-After: 28
+X-RateLimit-Remaining-Minute: 0
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 0
+RateLimit-Limit: 5
+Content-Length: 92
+X-Kong-Response-Latency: 1
+Server: kong/3.9.3
+X-Kong-Request-Id: 4f825611b002fe4d2d2fa93af07fb55b
+
+{
+  "message":"API rate limit exceeded",
+  "request_id":"4f825611b002fe4d2d2fa93af07fb55b"
+}
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    92  100    92    0     0    890      0 --:--:-- --:--:-- --:--:--   920HTTP/1.1 429 Too Many Requests
+Date: Mon, 06 Jul 2026 08:25:32 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 28
+Retry-After: 28
+X-RateLimit-Remaining-Minute: 0
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 0
+RateLimit-Limit: 5
+Content-Length: 92
+X-Kong-Response-Latency: 1
+Server: kong/3.9.3
+X-Kong-Request-Id: 295b3a5e769cdc562ae0f772ba37512f
+
+{
+  "message":"API rate limit exceeded",
+  "request_id":"295b3a5e769cdc562ae0f772ba37512f"
+}
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    92  100    92    0     0    856      0 --:--:-- --:--:-- --:--:--   884HTTP/1.1 429 Too Many Requests
+Date: Mon, 06 Jul 2026 08:25:32 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+RateLimit-Reset: 28
+Retry-After: 28
+X-RateLimit-Remaining-Minute: 0
+X-RateLimit-Limit-Minute: 5
+RateLimit-Remaining: 0
+RateLimit-Limit: 5
+Content-Length: 92
+X-Kong-Response-Latency: 1
+Server: kong/3.9.3
+X-Kong-Request-Id: b2d5cb72580a1e10e855352cfd18a769
+
+{
+  "message":"API rate limit exceeded",
+  "request_id":"b2d5cb72580a1e10e855352cfd18a769"
+}
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed

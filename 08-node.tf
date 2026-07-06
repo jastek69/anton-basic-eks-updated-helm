@@ -1,4 +1,4 @@
-resource "aws_iam_role" "nodes" {
+resource "aws_iam_role" "eks_nodes_role" {
   name = "eks-node-group-nodes"
 
   assume_role_policy = jsonencode({
@@ -13,22 +13,22 @@ resource "aws_iam_role" "nodes" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "nodes-AmazonEKSWorkerNodePolicy" {
+resource "aws_iam_role_policy_attachment" "taaops_eks_nodes_AmazonEKSWorkerNodePolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
-  role       = aws_iam_role.nodes.name
+  role       = aws_iam_role.eks_nodes_role.name
 }
 
 # Use Amazon VPC CNI Plugin rather than Flannel or similar
 # this is the IAM policy for podes to use native VPC network rather than virtual pod network
-resource "aws_iam_role_policy_attachment" "nodes-AmazonEKS_CNI_Policy" {
+resource "aws_iam_role_policy_attachment" "taaops_eks_nodes_AmazonEKS_CNI_Policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-  role       = aws_iam_role.nodes.name
+  role       = aws_iam_role.eks_nodes_role.name
 }
 
 # EKS Registry IAM policy
-resource "aws_iam_role_policy_attachment" "nodes-AmazonEC2ContainerRegistryReadOnly" {
+resource "aws_iam_role_policy_attachment" "taaops_eks_nodes_AmazonEC2ContainerRegistryReadOnly" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-  role       = aws_iam_role.nodes.name
+  role       = aws_iam_role.eks_nodes_role.name
 }
 
 ##########################################################
@@ -37,29 +37,29 @@ resource "aws_iam_role_policy_attachment" "nodes-AmazonEC2ContainerRegistryReadO
 # EKS Node Group
 # This node group will run in private subnets, and can be used for general workloads.
 
-resource "aws_eks_node_group" "private-nodes" {
-  
+resource "aws_eks_node_group" "eks_private_nodes" {
+
   # attach to control plane (EKS service)
-  cluster_name    = aws_eks_cluster.demo.name
+  cluster_name    = aws_eks_cluster.taaops_eks_cluster.name
   node_group_name = "private-nodes"
 
   # attach to IAM role for nodes (with the 3 above policies: EKSWorkerNode, EKS_CNI, EC2ContainerRegistryReadOnly)
   # this role is used by the EC2 instances that run the pods in the EKS 
-  node_role_arn   = aws_iam_role.nodes.arn
+  node_role_arn = aws_iam_role.eks_nodes_role.arn
 
   subnet_ids = [
-    aws_subnet.private_zone1.id,
-    aws_subnet.private_zone2.id
+    aws_subnet.eks_private_zone1.id,
+    aws_subnet.eks_private_zone2.id
   ]
 
   # standard EC2 instances
   capacity_type  = "ON_DEMAND"
-  instance_types = ["t3.medium"]
+  instance_types = var.ec2_instance_types
 
   scaling_config {
-    desired_size = 1
-    max_size     = 5
-    min_size     = 0
+    desired_size = var.ec2_desired_size
+    max_size     = var.ec2_max_size
+    min_size     = var.ec2_min_size
   }
 
   #how many nodes can be down during OS/K8s upgrades
@@ -83,9 +83,9 @@ resource "aws_eks_node_group" "private-nodes" {
   # }
 
   depends_on = [
-    aws_iam_role_policy_attachment.nodes-AmazonEKSWorkerNodePolicy,
-    aws_iam_role_policy_attachment.nodes-AmazonEKS_CNI_Policy,
-    aws_iam_role_policy_attachment.nodes-AmazonEC2ContainerRegistryReadOnly,
+    aws_iam_role_policy_attachment.taaops_eks_nodes_AmazonEC2ContainerRegistryReadOnly,
+    aws_iam_role_policy_attachment.taaops_eks_nodes_AmazonEKS_CNI_Policy,
+    aws_iam_role_policy_attachment.taaops_eks_nodes_AmazonEKSWorkerNodePolicy
   ]
 
   lifecycle {

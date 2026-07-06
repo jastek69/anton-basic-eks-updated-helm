@@ -41,3 +41,5 @@ terraform.rc
 
 .terraform.lock.hcl
 example.kubeconfig
+CLAUDE.md
+**/archive/*

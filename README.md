@@ -99,3 +99,16 @@ https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#LoadBalancers
 
 Also check EBS volumes:
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Volumes:sort=desc:size
+
+
+
+# Kube commands
+
+Retrieve pod information
+```kubectl --namespace observability get pods```
+
+
+Retrieve sevices
+```kubectl get svc -n observability```
+
+

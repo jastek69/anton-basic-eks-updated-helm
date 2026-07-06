@@ -127,4 +127,3 @@ kubectl get svc -n my-first-ns
 
 ---
 
-We’ll cover **imperative command usage** in our upcoming Zoom meeting.
