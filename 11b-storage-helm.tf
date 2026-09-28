@@ -13,7 +13,7 @@ locals {
 # unrelated repo can't block this resource's chart resolution.
 provider "helm" {
   repository_config_path = "${path.module}/.helm/repositories.yaml"
-  repository_cache        = "${path.module}/.helm/cache"
+  repository_cache       = "${path.module}/.helm/cache"
 
   kubernetes {
     host                   = aws_eks_cluster.taaops_eks_cluster.endpoint

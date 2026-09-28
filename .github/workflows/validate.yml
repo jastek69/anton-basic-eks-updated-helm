@@ -1,0 +1,29 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Format
+        run: terraform fmt -check -recursive -diff
+
+      # -backend=false: no state or AWS credentials needed to validate
+      - name: Init
+        run: terraform init -backend=false -input=false
+
+      - name: Validate
+        run: terraform validate -no-color
+
+      - name: Shell syntax
+        run: for f in bash/*.sh; do bash -n "$f"; done
