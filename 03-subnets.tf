@@ -1,6 +1,6 @@
-resource "aws_subnet" "private_zone1" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_blocks.private_zone1
+resource "aws_subnet" "eks_private_zone1" {
+  vpc_id            = aws_vpc.eks_host_vpc.id
+  cidr_block        = var.subnet_cidr_blocks.eks_private_zone1
   availability_zone = local.zone1
 
   tags = {
@@ -10,9 +10,9 @@ resource "aws_subnet" "private_zone1" {
   }
 }
 
-resource "aws_subnet" "private_zone2" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr_blocks.private_zone2
+resource "aws_subnet" "eks_private_zone2" {
+  vpc_id            = aws_vpc.eks_host_vpc.id
+  cidr_block        = var.subnet_cidr_blocks.eks_private_zone2
   availability_zone = local.zone2
 
   tags = {
@@ -22,10 +22,10 @@ resource "aws_subnet" "private_zone2" {
   }
 }
 
-resource "aws_subnet" "public_zone1" {
-  vpc_id                  = aws_vpc.main.id
-  cidr_block              = var.subnet_cidr_blocks.public_zone1
-  availability_zone       = local.zone2
+resource "aws_subnet" "eks_public_zone1" {
+  vpc_id                  = aws_vpc.eks_host_vpc.id
+  cidr_block              = var.subnet_cidr_blocks.eks_public_zone1
+  availability_zone       = local.zone1
   map_public_ip_on_launch = true
 
   tags = {
@@ -35,9 +35,9 @@ resource "aws_subnet" "public_zone1" {
   }
 }
 
-resource "aws_subnet" "public_zone2" {
-  vpc_id                  = aws_vpc.main.id
-  cidr_block              = var.subnet_cidr_blocks.public_zone2
+resource "aws_subnet" "eks_public_zone2" {
+  vpc_id                  = aws_vpc.eks_host_vpc.id
+  cidr_block              = var.subnet_cidr_blocks.eks_public_zone2
   availability_zone       = local.zone2
   map_public_ip_on_launch = true
 

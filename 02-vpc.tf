@@ -1,4 +1,4 @@
-resource "aws_vpc" "main" {
+resource "aws_vpc" "eks_host_vpc" {
   cidr_block = var.vpc_cidr
 
   enable_dns_support   = true
